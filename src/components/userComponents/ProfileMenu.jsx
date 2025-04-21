@@ -7,7 +7,7 @@ import { setUser } from "../../store/authSlice.js";
 
 const ProfileMenu = ({ right }) => {
   const [profileMenu, setProfileMenu] = useState(false);
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

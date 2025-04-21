@@ -9,8 +9,11 @@ export const STATUS = Object.freeze({
 
 // Fetch User
 export const fetchUser = createAsyncThunk("user/fetch", async () => {
-  const { learner: user } = await AuthServices.fetchUser();
-  return user;
+  const { learner: user, enrolledCourses: enrolledCourses } = await AuthServices.fetchUser();
+  return {
+    user,
+    enrolledCourses
+  }
 });
 
 const authSlice = createSlice({

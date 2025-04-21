@@ -10,6 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import PageBreadcrumb from "../../components/commonComponents/PageBreadcrumb";
 import { useSelector } from "react-redux";
+import notification from "../../helpers/notification";
 // import BillingStateCity from "../components/BillingStateCity";
 // import ShippingStateCity from "../components/ShippingStateCity";
 // import Footer from "../components/Footer";
@@ -17,7 +18,7 @@ import { useSelector } from "react-redux";
 const Checkout = () => {
 
     const {cartSummary, cart, coupon, coupons} = useSelector(state => state.inventory)
-
+    const { user } = useSelector((state) => state.auth);
     const [selectedCoupon, setSelectedCoupon] = useState(null)
     const [paymentMethod, setPaymentMethod] = useState("razorpay");
     const [shippingAddress, setShippingAddress] = useState(true);
@@ -29,51 +30,56 @@ const Checkout = () => {
 
     const navigate = useNavigate();
 
-    const handleCheckout = (options, data) => {
+    console.log(cartSummary, "summary")
 
-          // const paymentOption = {
-          //   key: process.env.REACT_APP_RAZORPAY_KEY,
-          //   currency: options.currency,
-          //   amount: options.amount,
-          //   name: process.env.REACT_APP_PROJECT_NAME,
-          //   description: "Learning made easy!",
-          //   image: `${process.env.REACT_APP_PUBLIC_URL}/assets/images/logos/learnr-logo.png`,
-          //   order_id: options.id,
-          //   handler: function (response) {
-          //     navigate(
-          //       `/donations/book-success/${options.donation_id}?transaction_reference=${response.razorpay_payment_id}`
-          //     );
-          //     console.log("success")
-          //   },
-          //   prefill: {
-          //     name: data.donor_name,
-          //     email: data.email,
-          //     contact: data.phone,
-          //   },
-          //   notes: {
-          //     type: options.payment_type,
-          //     admin_id: currentUser.id,
-          //   },
-          //   modal: {
-          //     ondismiss: function () {
-          //       notification("error", "Payment cancelled");
-          //     },
-          //   },
-          //   theme: {
-          //     color: primaryColor ? primaryColor : "#60349e",
-          //   },
-          // };
+    const handleCheckout = async (info) => {
 
-          // const paymentObject = new window.Razorpay(paymentOption);
-          // paymentObject.open();
+          const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/inventory/create-order`, {
+            amount: info.grandTotal * 100, // amount in paisa
+            cartItems: info.cartItems,
+          });
 
-          // paymentObject.on("payment.failed", function (response) {
-          //   notification("error", response.error.description);
-          //   failedDonationMutate({
-          //     ids: [options.donation_id],
-          //     payment_status: "Failed",
-          //   });
-          // });
+  const options = {
+    key: process.env.REACT_APP_RAZORPAY_KEY,
+    amount: data.order.amount,
+    currency: "INR",
+    name: "Learnr",
+    description: "Course Purchase",
+    order_id: data.order.id,
+    handler: async (response) => {
+    
+       try {
+         const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/inventory/verify-payment`, {
+           response,
+           cartItems: info.cartItems,
+           user
+         });
+
+         // ✅ Show success message from backend
+         notification("success", res.data.message || "Payment successful!");
+
+         // Optionally: Redirect to a success page or course dashboard
+         navigate("/my-courses");
+       } catch (error) {
+         console.error("Payment verification failed:", error);
+         notification("error", "Something went wrong while verifying payment.");
+       }
+    },
+    prefill: {
+      name: user.name,
+      email: user.email,
+    },
+    theme: {
+      color: "#3399cc",
+    },
+  };
+
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+
+  rzp.on("payment.failed", function (response) {
+    alert("Payment Failed: " + response.error.description);
+  });
         
     }
 
@@ -126,7 +132,6 @@ const Checkout = () => {
                               <span>{item?.totalLessons} Total Lessons</span>
                             </div>
                             <div className="course-detail">
-                            
                               <span>{item?.level} </span>
                             </div>
                           </div>
@@ -199,7 +204,10 @@ const Checkout = () => {
                   </div>
                 </div>
                 <div className="summary-card-footer hasBottomText">
-                  <button onClick={handleCheckout} className="redirect-link">
+                  <button
+                    onClick={() => handleCheckout(cartSummary)}
+                    className="redirect-link"
+                  >
                     Complete Payment
                   </button>
                 </div>

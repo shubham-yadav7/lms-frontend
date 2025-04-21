@@ -36,6 +36,7 @@ const HelpDetails = lazy(() => import("./pages/HelpPages/HelpDetails.jsx"));
 const UserProfile = lazy(() => import('./pages/userPages/UserProfile.jsx'))
 
 const Cart = lazy(()=> import('./pages/inventoryPages/Cart.jsx'))
+const MyCourses = lazy(()=> import('./pages/inventoryPages/MyCourses.jsx'))
 const Checkout = lazy(()=> import('./pages/inventoryPages/Checkout.jsx'))
 
 const App = () => {
@@ -85,6 +86,7 @@ const App = () => {
 
             {/* Inventory Routes */}
             <Route exact path='/cart' element={<ProtectedRoute><Cart /></ProtectedRoute>}></Route>
+            <Route exact path='/my-courses' element={<ProtectedRoute><MyCourses /></ProtectedRoute>}></Route>
             <Route exact path='/checkout' element={<ProtectedRoute><Checkout /></ProtectedRoute>}></Route>
 
             <Route exact path="*" element={<ErrorPage />}></Route>

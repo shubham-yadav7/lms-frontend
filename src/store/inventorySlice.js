@@ -89,6 +89,7 @@ const inventorySlice = createSlice({
           gst,
           cartTotal,
           grandTotal,
+          cartItems
         };
       })
       .addCase(fetchCart.rejected, (state, action) => {

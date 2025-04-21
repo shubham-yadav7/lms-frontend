@@ -10,24 +10,24 @@ import Skeleton from "react-loading-skeleton";
 const Banner = () => {
   const [banners, setBanners] = useState([]);
 
-  const getAllBanners = async () => {
-    try {
-      const { banners } = await PrimaryService.getAllBanners("website");
-      setBanners(banners);
-    } catch (error) {
-      console.log(error);
-      // notification(
-      //   "error",
-      //   error.response
-      //     ? error.response.data.message.split(":")[0]
-      //     : "Something went wrong."
-      // );
-    }
-  };
+  // const getAllBanners = async () => {
+  //   try {
+  //     const { banners } = await PrimaryService.getAllBanners("website");
+  //     setBanners(banners);
+  //   } catch (error) {
+  //     console.log(error);
+  //     // notification(
+  //     //   "error",
+  //     //   error.response
+  //     //     ? error.response.data.message.split(":")[0]
+  //     //     : "Something went wrong."
+  //     // );
+  //   }
+  // };
 
-  useEffect(() => {
-    getAllBanners();
-  }, []);
+  // useEffect(() => {
+  //   getAllBanners();
+  // }, []);
 
   return (
     <section className="banner py-0">
