@@ -82,7 +82,7 @@ const CartItem = ({ coupon, item, handleRemoveCart, fetchCart }) => {
             <span>({item?.item?.reviews?.length || 0} ratings)</span>
           </div>
           <div className="cart-course-about d-xl-flex d-none mt-2">
-            {item.item.duration?.inWords} • {item.item.totalLessons} lectures •{" "}
+            {item.item.totalDuration} • {item.item.totalLessons} lectures •{" "}
             {item.item.level}
           </div>
         </div>

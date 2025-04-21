@@ -74,7 +74,7 @@ const CourseCard = ({ course }) => {
                   src="/assets/images/homepage/courses/clock_icon.png"
                   alt=""
                 />
-                <span>{course?.duration?.inWords || 0}</span>
+                <span>{course?.totalDuration || 0}</span>
               </div>
             </div>
             <Link
@@ -137,7 +137,7 @@ const CourseCard = ({ course }) => {
                     src="/assets/images/homepage/courses/clock_icon.png"
                     alt=""
                   />
-                  <span>{course?.duration?.inWords || "0 hrs"}</span>
+                  <span>{course?.totalDuration || "0 mins"}</span>
                 </div>
               </div>
             </div>

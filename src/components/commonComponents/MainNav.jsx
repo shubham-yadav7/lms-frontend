@@ -34,7 +34,7 @@ const MainNav = ({ setShowNav }) => {
           {/* <li>
               <NavLink activeclassname="active" to="/courses/downloadable-courses">Downloadable Courses</NavLink>
           </li> */}
-          <li>
+          {/* <li>
             <NavLink activeclassname="active" to="/bundle-courses">
               Bundled Courses
             </NavLink>
@@ -48,7 +48,7 @@ const MainNav = ({ setShowNav }) => {
             <NavLink activeclassname="active" to="/book-courses">
               Books
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink activeclassname="active" to="/blogs">
               Blogs

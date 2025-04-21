@@ -74,6 +74,8 @@ const App = () => {
             <Route exact path="/help" element={<HelpListing />}></Route>
             <Route exact path="/help/:slug" element={<HelpDetails />}></Route>
 
+            {/* <Route exact path='/my-courses' element={<ProtectedRoute><MyLearning /></ProtectedRoute>}></Route> */}
+
             {/* Auth Routes */}
             {/* <Route exact path="/user-dashboard" element={<ProtectedRoute><UserDashboard/></ProtectedRoute>}></Route>
             <Route exact path='/my-courses' element={<ProtectedRoute><MyLearning /></ProtectedRoute>}></Route>

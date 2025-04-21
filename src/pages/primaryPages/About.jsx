@@ -47,32 +47,32 @@ const About = () => {
               <div className="about-course-text">
                 <div className="heading">
                   <span className="tag">About Us</span>
-                  <h2>About One-LMS</h2>
+                  <h2>About Learnr</h2>
                   <p>
-                  One-LMS Provides Online Computer Education to students
+                    Learnr Provides Online Computer Education to students
                     through their Prerecorded courses.
                   </p>
                 </div>
                 <div className="about-course-pointers">
                   <p>
-                    Welcome to One-LMS – The E-Learning Platform by , our main
-                    objective is to make computer education available in Hindi
-                    language in the simplest way. This can be a perfect way to
-                    improve your computer skills even more. Through this Portal
-                    you can do online professional computer courses right from
-                    home. Such as Data Entry, Dashboard Making, Data Science,
-                    Graphic Designing, Web Designing, MS-Office, Video Editing,
-                    Accounting Like Tally Prime, Blogging, YouTube Mastery etc.
+                    Welcome to Learnr – Your go-to LMS for digital learning. Our
+                    goal is to provide accessible, practical, and
+                    industry-relevant IT education in a structured format. With
+                    a focus on chapter-wise learning, quizzes, and
+                    certification, students can upgrade their skills from the
+                    comfort of their homes. Courses range from Web Development,
+                    Data Science, Graphic Design, MS Office, Video Editing, to
+                    Programming, Tally, and more.
                   </p>
                   <p className="mt-3">
-                    The founder of One-LMS Portal has over 15 years of
-                    experience in the field of computer education, he has been
-                    promoting computer education through his blog www.learn more
-                    india.in and YouTube channel Learn More with 1.4 M+
-                    subscribers for more than 5 years now. 1 Gold Play and 5
-                    Silver Play Awards have been awarded by YouTube for his Six
-                    YouTube Channels. Learn More YouTube channel provides
-                    tutorials related to computer and technology in the Hindi.
+                    Learnr is developed as part of an academic project with the
+                    vision of empowering students and professionals with
+                    affordable learning opportunities. The platform includes
+                    features like admin dashboards, role-based access (super
+                    admin, teacher, learner), chapter-wise progress tracking,
+                    and course reviews. Whether you're a beginner or looking to
+                    upskill, Learnr helps you grow efficiently through guided
+                    learning paths.
                   </p>
                 </div>
               </div>
@@ -81,13 +81,13 @@ const About = () => {
         </div>
       </section>
 
-      <section className="our-team dark">
+      {/* <section className="our-team dark">
         <div className="container">
           <div className="heading center">
             <span className="tag">Our Team</span>
             <h2>Meet the Team</h2>
             <p>
-              One-LMS Provides Online Computer Education to the students
+              Learnr Provides Online Computer Education to the students
               through Live and Prerecorded Videos.
             </p>
           </div>
@@ -351,7 +351,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="app-benefits">
         <div className="container">

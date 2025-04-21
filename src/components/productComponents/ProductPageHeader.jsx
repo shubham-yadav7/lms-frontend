@@ -115,7 +115,7 @@ const ProductPageHeader = ({ details, reviewsCount, executeScroll }) => {
               </div>
               <div className="about-course-info">
                 <p>
-                  Created by <Link to="/">{details?.creator}</Link>
+                  Created by <Link to="/">{details?.creator?.firstName}</Link>
                 </p>
                 <div className="d-flex align-items-center mt-2 mt-md-0 flex-wrap">
                   <p>
@@ -250,7 +250,7 @@ const ProductPageHeader = ({ details, reviewsCount, executeScroll }) => {
               <a
                 style={{ width: "100%" }}
                 className="custom-btn cart"
-                href="https://one-lms.in"
+                href="https://Learnr.in"
                 target="_blank"
               >
                 Buy Now

@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const PaymentSummary = ({ couponText, setCouponText, applyCoupon }) => {
   const { cartSummary } = useSelector((state) => state.inventory);
+
+  console.log("cartSummary", cartSummary);
   const dispatch = useDispatch();
 
   return (

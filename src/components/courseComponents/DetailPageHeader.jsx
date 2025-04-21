@@ -112,7 +112,7 @@ const DetailPageHeader = ({ details, executeScroll }) => {
               </div>
               <div className="about-course-info">
                 <span>
-                  Created by <Link to="/">{details?.creator}</Link>
+                  Created by <Link to="/">{details?.creator?.firstName}</Link>
                 </span>
                 <div className="d-flex align-items-center mt-2 mt-md-0 flex-wrap">
                   <span>
@@ -213,9 +213,10 @@ const DetailPageHeader = ({ details, executeScroll }) => {
                     </div>
                     <div className="detail-value">
                       <p>
-                        {details?.duration?.inWords
+                        {/* {details?.duration?.inWords
                           ? details?.duration?.inWords
-                          : `${details?.duration} mins`}
+                          : `${details?.duration} mins`} */}
+                        {details?.totalDuration ? details?.totalDuration : `0 sec`}
                       </p>
                     </div>
                   </li>

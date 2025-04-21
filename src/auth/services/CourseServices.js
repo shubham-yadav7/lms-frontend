@@ -25,7 +25,7 @@ CourseServices.fetchCourses = (type) => {
 CourseServices.fetchCoursesWithPagination = (data) => {
   let searchParams = new URLSearchParams(data);
   return fetch({
-    url: `localhost:80000/course/paginate-list?${searchParams}`,
+    url: `/course/paginate-list?${searchParams}`,
     method: "GET",
     headers: {
       "public-request": "true",
@@ -35,14 +35,14 @@ CourseServices.fetchCoursesWithPagination = (data) => {
 
 CourseServices.startCourse = (id) => {
   return fetch({
-    url: `localhost:80000/course/start-course/${id}`,
+    url: `/course/start-course/${id}`,
     method: "GET",
   });
 };
 
 CourseServices.fetchCourse = (slug) => {
   return fetch({
-    url: `localhost:80000/course/${slug}`,
+    url: `/course/${slug}`,
     method: "GET",
     headers: {
       "public-request": "true",

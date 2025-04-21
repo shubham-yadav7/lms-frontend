@@ -49,10 +49,7 @@ const Footer = () => {
                 <div className="footer-details">
                   <Link to="/">
                     <figure className="mb-0">
-                      <img
-                        src="/assets/images/logos/learnr-logo.png"
-                        alt=""
-                      />
+                      <img src="/assets/images/logos/learnr-logo.png" alt="" />
                     </figure>
                   </Link>
                   <p>
@@ -184,25 +181,13 @@ const Footer = () => {
             <div className="row align-items-center">
               <div className="col-lg-4 col-md-6 order-3 order-lg-0">
                 <div className="copy-rights">
-                  <p>Copyright {new Date().getFullYear()} One-LMS.</p>
-                  <p>
-                    All rights reserved. Designed By{" "}
-                    <a
-                      href="https://www.ideamagix.com/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {" "}
-                      Ideamagix{" "}
-                    </a>
-                    .
-                  </p>
+                  <p>Copyright {new Date().getFullYear()} Learnr.</p>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 order-2">
                 <div className="footer-connect">
                   <p>Have a question? Call us</p>
-                  <a href="tel:+918591597259">+91 85915 97259</a>
+                  <a href="tel:+919156221169">+91 9156221169</a>
                 </div>
               </div>
               <div className="col-lg-5 order-0 order-lg-3">

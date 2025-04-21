@@ -51,7 +51,7 @@ const Cart = () => {
         return notification('warning', 'Coupon is invalid.')
       }
       dispatch(setCoupon(matchedCoupon._id))
-      dispatch(fetchCart(matchedCoupon._id))
+      dispatch(fetchCart())
 
     } catch (error) {
       console.log(error)

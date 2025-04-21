@@ -8,7 +8,7 @@ const Benefits = () => {
           <div className="col-lg-8 mx-auto">
             <div className="heading center">
               <span className="tag">Benefits</span>
-              <h2>Benefits of Learning From One-LMS</h2>
+              <h2>Benefits of Learning From Learnr</h2>
             </div>
           </div>
         </div>

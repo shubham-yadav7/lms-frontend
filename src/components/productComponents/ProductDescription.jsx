@@ -117,7 +117,7 @@ const ProductDescription = ({ details, reviewsCount, myRef }) => {
                     <a
                       style={{ width: "100%" }}
                       className="custom-btn cart"
-                      href="https://one-lms.in"
+                      href="https://Learnr.in"
                       target='_blank'                      
                     >Buy Now</a>
                   <button className="custom-btn filled">Buy Now</button>

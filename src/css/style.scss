@@ -4250,8 +4250,8 @@ section.course-description {
 
 section.page-bredcrumb {
   background-color: #076185;
-  padding: 0;
-  height: 100px;
+  padding: 25px 0;
+  // height: 140px;
   @include center();
   .all-page {
     ol {
@@ -4270,8 +4270,8 @@ section.page-bredcrumb {
       h4 {
         font-size: 40px;
         font-weight: 600;
-        color: #90a6b7;
-        margin-bottom: 8px;
+        color: #fff;
+        margin-bottom: 18px;
       }
     }
   }

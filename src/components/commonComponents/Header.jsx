@@ -328,16 +328,16 @@ const Header = ({ showUserNav }) => {
                   Bundled Courses
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink activeclassname="active" to="/products">
                   All Products
                 </NavLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <NavLink activeclassname="active" to="/book-courses">
                   Books
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink activeclassname="active" to="/blogs">
                   Blogs

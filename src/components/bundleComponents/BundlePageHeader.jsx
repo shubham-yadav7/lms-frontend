@@ -118,7 +118,7 @@ const BundlePageHeader = ({ details, executeScroll }) => {
               </div>
               <div className="about-course-info">
                 <span>
-                  Created by <Link to="/">{details?.creator}</Link>
+                  Created by <Link to="/">{details?.creator?.firstName}</Link>
                 </span>
                 <div className="d-flex align-items-center mt-2 mt-md-0 flex-wrap">
                   <span>

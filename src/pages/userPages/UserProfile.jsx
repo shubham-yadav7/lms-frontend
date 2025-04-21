@@ -280,61 +280,7 @@ const UserProfile = () => {
                   </div>
                 </form>
               </div>
-              <div className="profile-edit-form mt-5">
-                <h4 className="form-title">Address</h4>
-                <form onSubmit={addressFormSubmit(handleAddressForm)}>
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="input-wrap mb-3">
-                        <textarea
-                          placeholder="Address"
-                          {...addressFormRegister("address")}
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="input-wrap">
-                        <input
-                          type="text"
-                          placeholder="Pin Code"
-                          maxLength={6}
-                          {...addressFormRegister("pinCode", {
-                            required: true,
-                          })}
-                          onKeyDown={(e) => {
-                            var charCode = e.which ? e.which : e.keyCode;
-                            if (
-                              charCode > 31 &&
-                              (charCode < 48 || charCode > 57)
-                            ) {
-                              e.preventDefault();
-                            }
-                            return true;
-                          }}
-                        />
-                        {addressFormError.pinCode && (
-                          <span className="errorSpan">
-                            {" "}
-                            {addressFormError.pinCode}{" "}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <AddressStateCity
-                      user={user}
-                      register={addressFormRegister}
-                      Controller={Controller}
-                      control={addressFormControl}
-                      setValue={addressFormSetValue}
-                    />
-                    <div className="col-lg-12">
-                      <div className="form-btn-wrap">
-                        <button type="submit">Update Address</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
+             
               <div className="profile-edit-form mt-5">
                 <h4 className="form-title">Change Password</h4>
                 <form

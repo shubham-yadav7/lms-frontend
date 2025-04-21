@@ -19,6 +19,7 @@ const CourseContentList = ({ content, id, selected, setSelected }) => {
           {content?.title}
         </button>
         <div className={`collapse-content ${selected === id ? "active" : ""}`}>
+          <div className="py-4 px-3" dangerouslySetInnerHTML={{ __html: content?.description }} />
           <ol>
             {content?.lessons?.map((lesson, i) => (
               <li key={i}>
